@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Trevia Projects — Warm Luxury Neutral palette (OKLCH L C H) */
+    /* Background: warm off-white beige */
+    --background: 0.98 0.008 80;
+    /* Card: pure white */
+    --card: 1 0 0;
+    --card-foreground: 0.15 0.01 60;
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.01 60;
+    /* Foreground: near black warm */
+    --foreground: 0.15 0.01 60;
+    /* Primary: warm brown */
+    --primary: 0.52 0.09 50;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.94 0.01 80;
+    --secondary-foreground: 0.52 0.09 50;
+    --muted: 0.94 0.01 80;
+    /* Muted text: medium grey-brown */
+    --muted-foreground: 0.55 0.02 60;
+    --accent: 0.94 0.01 80;
+    --accent-foreground: 0.52 0.09 50;
+    /* Destructive / red */
+    --destructive: 0.59 0.22 27;
+    --destructive-foreground: 1 0 0;
+    /* Border: warm light */
+    --border: 0.9 0.01 80;
+    --input: 0.9 0.01 80;
+    --ring: 0.52 0.09 50;
+
+    /* Green */
+    --success: 0.66 0.18 155;
+    --success-foreground: 1 0 0;
+
+    /* Chart colors */
+    --chart-1: 0.66 0.18 155;
+    --chart-2: 0.59 0.22 27;
+    --chart-3: 0.52 0.09 50;
+    --chart-4: 0.55 0.02 60;
+    --chart-5: 0.75 0.12 180;
+
+    --sidebar: 1 0 0;
+    --sidebar-foreground: 0.15 0.01 60;
+    --sidebar-primary: 0.52 0.09 50;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.94 0.01 80;
+    --sidebar-accent-foreground: 0.52 0.09 50;
+    --sidebar-border: 0.9 0.01 80;
+    --sidebar-ring: 0.52 0.09 50;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Poppins", sans-serif;
+    /* Prevent horizontal scroll without breaking window.scrollY / position:fixed */
+    overflow-x: clip;
+    /* Prevent any fixed-width child from breaking the viewport */
+    min-width: 0;
+  }
+
+  /* All images are responsive by default */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer utilities {
+  .trevia-card-hover {
+    transition: transform 220ms ease-out, box-shadow 220ms ease-out;
+  }
+  .trevia-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(100, 60, 20, 0.12);
+  }
+  .trevia-img-zoom img {
+    transition: transform 220ms ease-out;
+  }
+  .trevia-img-zoom:hover img {
+    transform: scale(1.05);
+  }
+  .font-cormorant {
+    font-family: "Cormorant Garamond", serif;
+  }
+  .font-script {
+    font-family: "Dancing Script", cursive;
+  }
+
+  /* Touch-friendly min-height for interactive elements */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Page transition animation */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: pageEnter 0.35s ease forwards;
+}
