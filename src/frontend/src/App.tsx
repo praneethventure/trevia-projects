@@ -618,6 +618,24 @@ function Footer() {
                   Projects
                 </button>
               </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => navigate({ to: "/products" })}
+                  className="text-sm text-white/60 hover:text-white transition-colors cursor-pointer bg-transparent border-0 p-0"
+                >
+                  Shop
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => navigate({ to: "/contact" })}
+                  className="text-sm text-white/60 hover:text-white transition-colors cursor-pointer bg-transparent border-0 p-0"
+                >
+                  Contact Us
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -675,17 +693,7 @@ function Footer() {
             &copy; {new Date().getFullYear()} Trevia Projects. All rights
             reserved.
           </p>
-          <p>
-            Built with ❤️ using{" "}
-            <a
-              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-white/70 transition-colors"
-            >
-              caffeine.ai
-            </a>
-          </p>
+          <p>Built with ❤️ for Trevia Projects</p>
         </div>
       </div>
     </footer>

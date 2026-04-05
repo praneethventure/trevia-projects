@@ -3487,15 +3487,7 @@ export default function AdminPage() {
             fontSize: "11px",
           }}
         >
-          © {new Date().getFullYear()} Trevia Projects ·{" "}
-          <a
-            href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: T.accent, textDecoration: "none" }}
-          >
-            caffeine.ai
-          </a>
+          © {new Date().getFullYear()} Trevia Projects. All rights reserved.
         </footer>
       </div>
 
